@@ -1,50 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Cesium + Raphael</title>
+    <script type="text/javascript" src="3rdParty/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="3rdParty/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="3rdParty/cesium/Cesium.js"></script>
+    <script type="text/javascript" src="3rdParty/raphael/raphael.js"></script>
+    <script type="text/javascript" src="3rdParty/raphael/g.raphael.js"></script>
+    <script type="text/javascript" src="3rdParty/raphael/g.pie.js"></script>
+    <script type="text/javascript">
+        var sharedObject = {
+            yearData: [],
+            flyTo: null
+        };
+    </script>
+    <style>
+        @import url(3rdParty/jquery-ui-1.10.3/themes/vader/jquery-ui.css);
+        @import url(raphael_chart_style.css);
+        @import url(3rdParty/cesium/Widgets/widgets.css);
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Cesium-raphael-quick-demo : A quick demo featuring basic pie chart integration from raphaelJS with Cesium..Nothing Fancy...:)">
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    </style>
+</head>
+<body>
+<div id="cesiumContainer"></div>
+<div id="radio" style="position:absolute; top:0px; right:50%; height: 30px">
+    <input type="radio" id="health" name="healthwealth" checked="checked"><label for="health">Health</label>
+    <input type="radio" id="wealth" name="healthwealth"><label for="wealth">Wealth</label>
+</div>
 
-    <title>Cesium-raphael-quick-demo</title>
-  </head>
+<div id="info" title="Nation Health and Wealth"></div>
+<div id="chart"></div>
 
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ATM-SALEH/cesium-raphael-quick-demo">View on GitHub</a>
-
-          <h1 id="project_title">Cesium-raphael-quick-demo</h1>
-          <h2 id="project_tagline">A quick demo featuring basic pie chart integration from raphaelJS with Cesium..Nothing Fancy...:)</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ATM-SALEH/cesium-raphael-quick-demo/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ATM-SALEH/cesium-raphael-quick-demo/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="quick-demo-of-cesium--raphaeljs" class="anchor" href="#quick-demo-of-cesium--raphaeljs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick demo of cesium + raphaelJS</h1>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Cesium-raphael-quick-demo maintained by <a href="https://github.com/ATM-SALEH">ATM-SALEH</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+<script type="text/javascript" src="globe.js"></script>
+</body>
 </html>
